@@ -1,0 +1,48 @@
+global:
+  defaultStorageClass: "nfs-client"
+
+drupalProfile: standard
+drupalUsername: andrei
+drupalEmail: taa421992@gmail.com
+
+persistence:
+  enabled: true
+  storageClass: "nfs-client"
+  accessModes:
+    - ReadWriteMany
+  size: 1Gi
+resourcesPreset: "micro"
+
+service:
+  type: NodePort
+
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  hostname: drupal.k8s-19.sa
+
+mariadb:
+  enabled: true
+  auth:
+    rootPassword: ""
+    database: bitnami_drupal
+    username: bn_drupal
+    password: ""
+
+extraEnvVars:
+  - name: DRUPAL_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: drupal-secret
+        key: drupalPassword
+  - name: MARIADB_ROOT_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: drupal-secret
+        key: rootPassword
+  - name: MARIADB_PASSWORD
+    valueFrom:
+      secretKeyRef:
+        name: drupal-secret
+        key: mariadbPassword
+
