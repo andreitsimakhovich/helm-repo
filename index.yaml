@@ -1,3 +1,24 @@
 apiVersion: v1
-entries: {}
-generated: "2025-05-18T21:16:17.20907671+03:00"
+entries:
+  first-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-05-18T21:20:22.079650801+03:00"
+    description: A Helm chart for Kubernetes
+    digest: d486f5a8644c95b06d66b6372af5ed02ac3cf32a07353d689b481b013789e510
+    name: first-app
+    type: application
+    urls:
+    - https://andreitsimakhovich.github.io/helm-repo/helm-releases/first-app-0.1.0.tgz
+    version: 0.1.0
+  jenkins:
+  - apiVersion: v3
+    appVersion: latest
+    created: "2025-05-18T21:20:22.082658508+03:00"
+    description: Jenkins CI/CD Deployment using Helm
+    digest: c6d16a90d59e5fd386d0b42f9afa4a483f4eca22fb7863576b7e9d5d425a1be4
+    name: jenkins
+    urls:
+    - https://andreitsimakhovich.github.io/helm-repo/helm-releases/jenkins-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-05-18T21:20:22.077804382+03:00"
