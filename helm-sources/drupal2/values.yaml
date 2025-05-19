@@ -45,3 +45,4 @@ extraEnvVars:
       secretKeyRef:
         name: drupal-secret
         key: mariadbPassword
+
